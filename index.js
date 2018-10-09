@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const keys = require('./config/keys.js');
 const app = express();
 
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({
 
 
 app.get('/', function(req,res){
-  res.send('Hello World!');
+  res.send('Hello World! ' + keys.ENVIROMENT);
 });
 
 const PORT = process.env.PORT || 5000;
