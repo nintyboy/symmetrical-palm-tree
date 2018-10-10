@@ -1,4 +1,2 @@
 node_modules
-/config/staging.js
 /config/dev.js
-/config/prod.js
