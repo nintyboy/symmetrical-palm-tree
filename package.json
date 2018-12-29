@@ -1,19 +1,41 @@
 {
-	"name": "staging-test",
+	"name": "longform-server",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Backend for longform",
 	"main": "index.js",
+	"author": "",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"babel-node": "babel-node --presets=latest",
-		"start": "node index.js"
+		"start": "node index.js",
+		"server": "nodemon --exec npm run babel-node -- ./index.js",
+		"build": "babel src -d dist"
 	},
 	"keywords": [],
-	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@google-cloud/storage": "^1.7.0",
+		"@google-cloud/text-to-speech": "0.1.0",
 		"body-parser": "^1.18.3",
-		"express": "^4.16.3"
+		"cheerio": "1.0.0-rc.2",
+		"compromise": "^11.12.1",
+		"express": "^4.16.3",
+		"firebase-admin": "^5.12.0",
+		"metascraper": "^4.3.5",
+		"metascraper-author": "^4.3.5",
+		"metascraper-clearbit-logo": "^4.3.5",
+		"metascraper-date": "^4.3.5",
+		"metascraper-description": "^4.3.5",
+		"metascraper-image": "^4.3.5",
+		"metascraper-lang-detector": "^4.3.5",
+		"metascraper-logo": "^4.3.5",
+		"metascraper-publisher": "^4.3.5",
+		"metascraper-title": "^4.3.5",
+		"metascraper-url": "^4.3.5",
+		"metascraper-video": "^4.3.5",
+		"node-readability": "^3.0.0",
+		"nodemon": "^1.12.1",
+		"sentence-tokenizer": "^1.0.0"
 	},
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
