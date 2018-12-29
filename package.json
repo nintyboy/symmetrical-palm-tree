@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"author": "",
 	"engines": {
-		"node": "10.x",
+		"node": "9.8.0",
 		"npm": "5.6.0"
 	},
 	"scripts": {
