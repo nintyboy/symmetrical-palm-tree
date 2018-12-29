@@ -3,9 +3,6 @@
 	"version": "1.0.0",
 	"description": "Backend for longform",
 	"main": "index.js",
-	"engines": {
-		"node": "9.8.0"
-	},
 	"author": "",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -37,7 +34,7 @@
 		"metascraper-url": "^4.3.5",
 		"metascraper-video": "^4.3.5",
 		"node-readability": "^3.0.0",
-		"nodemon": "latest",
+		"nodemon": "^1.12.1",
 		"sentence-tokenizer": "^1.0.0"
 	},
 	"devDependencies": {
