@@ -12,15 +12,15 @@ GLOBALS
 const serviceAccount = require('../config/keys.js');
 
 admin.initializeApp({
-	credential: admin.credential.cert(serviceAccount.GOOGLE_CLOUD_STORAGE),
-	storageBucket: 'gs://longform-dev.appspot.com'
+	credential: admin.credential.cert(serviceAccount.FIREBASE),
+	storageBucket: 'gs://staging.longform-dev.appspot.com'
 });
 
 const db = admin.firestore();
 const storage = new Storage({
 	projectId: 'longform-dev'
 })
-const bucketName = 'gs://longform-dev.appspot.com'
+const bucketName = 'gs://staging.longform-dev.appspot.com'
 
 const bucket = admin.storage().bucket();
 
