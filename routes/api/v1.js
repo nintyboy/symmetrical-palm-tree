@@ -17,7 +17,11 @@ app.post('/url', async (req, res) => {
 	} else {
 		const answer = await firebase.checkIfData(req);
 		if (typeof answer === 'object') {
+			console.log(answer);
+			// firebase.updateDoc(answer.id, answer.todayVists);
 			res.send(answer)
+
+			// firebase.updateDoc(answer.id);
 			return;
 		} else {
 			console.log('Nothing found, parsing article...');
@@ -29,14 +33,10 @@ app.post('/url', async (req, res) => {
 			console.log("Character Count: " + getArticle.char_count);
 			if (getArticle.char_count < 5000) {
 				const makeMP3 = await tts.makeMP3(getArticle);
-				// const upload = await firebase.upload(makeMP3, getArticle);
-				// getArticle.URI = upload;
+				const upload = await firebase.uploadS3(makeMP3, getArticle);
+				getArticle.URI = upload;
 				const sendData = await firebase.putData(getArticle);
 			}
-			// const makeMP3 = await tts.makeMP3(getArticle);
-			// const upload = await firebase.upload(makeMP3, getArticle);
-			// getArticle.URI = upload;
-			// const sendData = await firebase.putData(getArticle);
 			res.send(getArticle);
 		}
 	}

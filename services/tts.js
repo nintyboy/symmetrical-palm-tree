@@ -34,8 +34,8 @@ module.exports = {
 				text: data.content
 			},
 			voice: {
-				name: 'en-US-Wavenet-E',
-				languageCode: 'en-US',
+				name: 'en-GB-Wavenet-C',
+				languageCode: 'en-GB',
 				ssmlGender: 'FEMALE'
 			},
 			audioConfig: {
@@ -60,6 +60,7 @@ module.exports = {
 					}
 					fs.exists(outputFile, (exists) => {
 						if (exists) {
+							// console.log("AUDIO CONTENT", response);
 							console.timeEnd('makeMP3');
 							resolve(outputFile);
 						}
