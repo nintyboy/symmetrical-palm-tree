@@ -7,6 +7,7 @@ const Storage = require('@google-cloud/storage');
 const AWS = require('aws-sdk');
 const fs = require('fs');
 
+
 /*-------------------
 GLOBALS
 -------------------*/
@@ -64,40 +65,8 @@ module.exports = {
 						todayVists: 4440
 					}
 				});
-				// const collection = await db.collectiion('URLS')
-				// 	.where('uid', '==', id)
-				// 	.get()
-				// 	.then(function(querySnapshot) {
-				//     querySnapshot.forEach(function(doc) {
-				//     console.log(doc.id, " => ", doc.data());
-				//     // Build doc ref from doc.id
-				//     db.collection("users").doc(doc.id).update({foo: "bar"});
-				// });
-			},
 
-			// Old Firebase Storage Upload
-			// upload: async (data, getArticle) => {
-			// 		console.time('upload');
-			// 		const signedURL = storage.bucket(bucketName)
-			// 			.upload(data, {
-			// 				destination: getArticle.domain + "/" + getArticle.title.replace(/\s+/g, '-') + '.mp3'
-			// 			})
-			// 			.then(() => {
-			// 				let file = bucket.file(getArticle.domain + "/" + getArticle.title.replace(/\s+/g, '-') + '.mp3');
-			// 				return file.getSignedUrl({
-			// 					action: 'read',
-			// 					expires: '03-09-2500'
-			// 				});
-			// 			}).then(url => {
-			// 				console.log("URL :", url);
-			// 				console.timeEnd('upload');
-			// 				return url[0];
-			// 			}).catch(err => {
-			// 				console.log('ERROR (Firebase Storage): ', err);
-			// 			});
-			//
-			// 		return signedURL;
-			// 	},
+			},
 			uploadS3: async function(data, getArticle) {
 					console.time('S3 Upload');
 					var params = {

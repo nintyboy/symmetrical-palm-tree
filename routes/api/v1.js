@@ -18,14 +18,12 @@ app.post('/url', async (req, res) => {
 		const answer = await firebase.checkIfData(req);
 		if (typeof answer === 'object') {
 			console.log(answer);
-			// firebase.updateDoc(answer.id, answer.todayVists);
 			res.send(answer)
-
-			// firebase.updateDoc(answer.id);
 			return;
 		} else {
 			console.log('Nothing found, parsing article...');
 			let getArticle = await parse.getData(req.body.data.url);
+			// let getArticle = await parse.getDataV2(req.body.data.url);
 			/*
 			  TEMP FIX:
 			  If the more than 5000 characters then don't make the mp3
@@ -38,6 +36,35 @@ app.post('/url', async (req, res) => {
 				const sendData = await firebase.putData(getArticle);
 			}
 			res.send(getArticle);
+		}
+	}
+})
+
+app.post('/url-axios', async (req, res) => {
+	if (!req.body) {
+		res.send('No Request');
+	} else {
+		const answer = await firebase.checkIfData(req);
+		if (typeof answer === 'object') {
+			console.log(answer);
+			res.send(answer)
+			return;
+		} else {
+			console.log('Nothing found, parsing article...');
+			let getArticle = await parse.getDataV2(req.body.data.url);
+			/*
+			  TEMP FIX:
+			  If the more than 5000 characters then don't make the mp3
+			*/
+			// console.log("Character Count: " + getArticle.char_count);
+			// if (getArticle.char_count < 5000) {
+			// 	const makeMP3 = await tts.makeMP3(getArticle);
+			// 	// const upload = await firebase.uploadS3(makeMP3, getArticle);
+			// 	// getArticle.URI = upload;
+			// 	const sendData = await firebase.putData(getArticle);
+			// }
+			// res.send(getArticle);
+			// res.send(getArticle);
 		}
 	}
 })

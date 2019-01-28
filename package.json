@@ -21,12 +21,15 @@
 		"@google-cloud/storage": "^1.7.0",
 		"@google-cloud/text-to-speech": "0.1.0",
 		"aws-sdk": "^2.382.0",
+		"axios": "^0.18.0",
 		"body-parser": "^1.18.3",
 		"cheerio": "1.0.0-rc.2",
 		"compromise": "^11.12.4",
 		"dotenv": "^6.2.0",
 		"express": "^4.16.4",
 		"firebase-admin": "^5.13.1",
+		"is-url": "^1.2.4",
+		"jsdom": "^13.1.0",
 		"metascraper": "^4.8.5",
 		"metascraper-author": "^4.8.5",
 		"metascraper-clearbit-logo": "^4.8.5",
@@ -41,6 +44,7 @@
 		"metascraper-video": "^4.8.5",
 		"node-readability": "^3.0.0",
 		"nodemon": "^1.12.1",
+		"readability": "^0.1.0",
 		"sentence-tokenizer": "^1.0.1"
 	},
 	"devDependencies": {
